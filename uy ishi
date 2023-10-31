@@ -1,0 +1,26 @@
+class Room:
+    def __init__(self, length, height, width):
+        self.length = length
+        self.height = height
+        self.width = width
+
+    def calculate_number_of_tables(self):
+        table_length = 2
+        table_width = 15
+        return (self.length // table_length) * (self.width // table_width)
+
+    def calculate_volume(self):
+        return self.length * self.height * self.width
+
+room1 = Room(2, 15, 2)
+room2 = Room(5, 15, 3)
+room3 = Room(3, 15, 4)
+room4 = Room(4, 15, 5)
+room5 = Room(6, 15, 6)
+
+rooms = [room1, room2, room3, room4, room5]
+
+for i, room in enumerate(rooms):
+    print(f"Object {i+1} - Length: {room.length}, Height: {room.height}, Width: {room.width}")
+    print(f"Number of tables that can fit in Object {i+1}: {room.calculate_number_of_tables()}")
+    print(f"Volume of Object {i+1}: {room.calculate_volume()}\n")
